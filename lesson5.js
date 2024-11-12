@@ -30,5 +30,33 @@ function searchByYear()
 }
 function mytable(d)
 {
-    document.getElementById("t").innerHTML+="<tr>"+"<td>"+d.title+"</td>"+"<td>"+d.artist+"</td>"+"<td>"+d.country+"</td>"+"<td>"+d.company+"</td>"+"<td>"+d.price+"</td>"+"<td>"+d.year+"</td>"+"</tr>"    
+    document.getElementById("t").innerHTML+="<tr>"+"<td>"+d.id+"</td>"+"<td>"+d.title+"</td>"+"<td>"+d.artist+"</td>"+"<td>"+d.country+"</td>"+"<td>"+d.company+"</td>"+"<td>"+d.price+"</td>"+"<td>"+d.year+"</td>"+"</tr>";    
+}
+function add()
+{
+    const disk={
+        id:catalog[catalog.length-1].id+1,
+        title:document.getElementById("title").value,
+        artist:document.getElementById("artist").value,
+        country:document.getElementById("country").value,
+        company:document.getElementById("company").value,
+        price:document.getElementById("price").value,
+        year:document.getElementById("year").value
+    }
+    catalog.push(disk)
+    alert("הפריט נוסף בהצלחה")
+    document.getElementById("title").value=" "
+    document.getElementById("artist").value=" "
+    document.getElementById("country").value=" "
+    document.getElementById("company").value=" "
+    document.getElementById("price").value=" "
+    document.getElementById("year").value=" "
+}
+function remove()
+{
+    const id=document.getElementById('r').value;
+    const cd=catalog.findIndex(x=>x.id==id);
+    catalog.splice(cd,1);
+    alert("הפריט נמחק בהצלחה");
+    document.getElementById("t").innerHTML="";
 }

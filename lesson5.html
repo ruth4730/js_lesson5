@@ -10,15 +10,36 @@
     <label>כתוב את שם הדיסק</label>
     <input type="text" id="cd_name" onkeydown="searchByName()">
     <br>
-    <p id="showByName"></p>
     <select name="countries" id="cd_country" onchange="searchByCountry()">
     </select>
-    <p id="showByCountry"></p>
     <input type="text" id="from">-
     <input type="text" id="to">
     <input type="button" value="סנן" onclick="searchByYear()">
-    <p id="showByYear"></p>
     <table id="t"></table>
+    <br>
+    <label>title</label>
+    <input type="text" id="title">
+    <br>
+    <label>artist</label>
+    <input type="text" id="artist">
+    <br>
+    <label>country</label>
+    <input type="text" id="country">
+    <br>
+    <label>company</label>
+    <input type="text" id="company">
+    <br>
+    <label>price</label>
+    <input type="number" id="price">
+    <br>
+    <label>year</label>
+    <input type="number" id="year">
+    <br>
+    <input type="button" value="הוסף" onclick="add()">
+    <br>
+    <label>הכנס קוד דיסק למחיקה</label>
+    <input type="number" id="r">
+    <input type="button" value="מחק" onclick="remove()">
     <script src="cd_array.js"></script>
     <script src="lesson5.js"></script>
 
